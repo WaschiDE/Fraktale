@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import Fractal.SierpinskiDreieck?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1020.0" prefWidth="1243.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ressources.Controller">
+    <children>
+        <HBox prefHeight="1000.0" prefWidth="1215.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox prefHeight="1000.0" prefWidth="211.0" style="-fx-background-color: lightgrey;" HBox.hgrow="NEVER">
+                    <children>
+
+                        <Label prefHeight="56.0" prefWidth="214.0" text="Fractal">
+                            <font>
+                                <Font name="Calibri Bold" size="24.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </VBox.margin>
+                        </Label>
+
+                        <Label text="Fractalart">
+                            <VBox.margin>
+                                <Insets left="12.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+
+                        <ComboBox fx:id="fractalComboBox" prefWidth="150.0" promptText="choose a Fractal">
+                             <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:id="1" fx:value="Sierpinski-Tepich" />
+                                    <String fx:id="2" fx:value="Sierpinksi-Dreieck" />
+                                </FXCollections>
+                            </items>
+                                <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                </VBox.margin>
+                        </ComboBox>
+
+                        <Button fx:id="buildButton" mnemonicParsing="false" onAction="#buildFractal" prefHeight="25.0" prefWidth="145.0" text="Build Fractal">
+                            <VBox.margin>
+                                <Insets left="105.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                        </Button>
+
+                    </children>
+                </VBox>
+
+                <SierpinskiDreieck fx:id="canvas" height="1000.0" width="1000.0">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </HBox.margin>
+                </SierpinskiDreieck>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
