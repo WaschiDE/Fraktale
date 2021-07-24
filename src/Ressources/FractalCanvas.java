@@ -30,7 +30,7 @@ public class FractalCanvas extends Canvas {
 
                 this.middlepoint[0] = this.middlepoint[0] + ((event.getX() - 500) * this.zoomFaktor / 4);
                 this.middlepoint[1] = this.middlepoint[1] + ((500 - event.getY()) * this.zoomFaktor / 4);
-                System.out.println("Zoom-In-Event: " + this.middlepoint[0] + " " + this.middlepoint[1] + " Zoom: 1000px =" + this.zoomFaktor * 1000 + "unit");
+                //System.out.println("Zoom-In-Event: " + this.middlepoint[0] + " " + this.middlepoint[1] + " Zoom: 1000px =" + this.zoomFaktor * 1000 + "unit");
 
             }
             if (event.getDeltaY() < 0) {
@@ -43,7 +43,7 @@ public class FractalCanvas extends Canvas {
 
                 this.middlepoint[0] = this.middlepoint[0] - ((event.getX() - 500) * this.zoomFaktor / 4);
                 this.middlepoint[1] = this.middlepoint[1] - ((500 - event.getY()) * this.zoomFaktor / 4);
-                System.out.println("Zoom-Out-Event: X: " + this.middlepoint[0] + " Y: " + this.middlepoint[1] + " Zoom: 1000px =" + this.zoomFaktor * 1000 + "unit");
+                //System.out.println("Zoom-Out-Event: X: " + this.middlepoint[0] + " Y: " + this.middlepoint[1] + " Zoom: 1000px =" + this.zoomFaktor * 1000 + "unit");
             }
 
         });
@@ -60,7 +60,7 @@ public class FractalCanvas extends Canvas {
             this.lastX = event.getX();
             this.lastY = event.getY();
 
-            System.out.println("Dragevent: " + this.middlepoint[0] + " " + this.middlepoint[1] + " Zoom: 1000px =" + this.zoomFaktor * 1000 + "unit");
+            //System.out.println("Dragevent: " + this.middlepoint[0] + " " + this.middlepoint[1] + " Zoom: 1000px =" + this.zoomFaktor * 1000 + "unit");
 
         });
     }
