@@ -8,13 +8,11 @@ public class SierpinskiTeppich {
 
     public void drawSierpinskiTeppich() {
         FractalCanvas.context.setStroke(Color.BLACK);
-
-        FractalCanvas fractalCanvas = new FractalCanvas();
-
-        System.out.println(fractalCanvas.getRigthBottomCorner()[0]);
-        System.out.println(fractalCanvas.getRigthBottomCorner()[1]);
+        FractalCanvas.context.setFill(Color.BLACK);
 
 
+        System.out.println(FractalCanvas.getLeftUpperCorner()[0]);
+        System.out.println(FractalCanvas.getLeftUpperCorner()[1]);
 
         int i;
         int j;
@@ -34,8 +32,21 @@ public class SierpinskiTeppich {
                 j = 0;
                 while (j < Math.pow(3, k)) {
                     if (inCarpet(i, j)) {
-                        FractalCanvas.context.fillRect((fieldsize * i - fractalCanvas.getLeftUpperCorner()[0])/fractalCanvas.getZoomFaktor() , (-fieldsize * j + fractalCanvas.getLeftUpperCorner()[1])/fractalCanvas.getZoomFaktor(), fieldsize/fractalCanvas.getZoomFaktor(), fieldsize/fractalCanvas.getZoomFaktor());
+                        FractalCanvas.context.fillRect(
+                                (fieldsize * i - FractalCanvas.getLeftUpperCorner()[0])/FractalCanvas.getZoomFaktor() ,
+                                (fieldsize * j - FractalCanvas.getLeftUpperCorner()[1])/FractalCanvas.getZoomFaktor(),
+                                fieldsize/FractalCanvas.getZoomFaktor(),
+                                fieldsize/FractalCanvas.getZoomFaktor()
+                        );
+
+                        System.out.println((fieldsize * j - FractalCanvas.getLeftUpperCorner()[1])/FractalCanvas.getZoomFaktor());
+                        System.out.println((fieldsize * j - FractalCanvas.getLeftUpperCorner()[1])/FractalCanvas.getZoomFaktor());
+                        System.out.println(fieldsize/FractalCanvas.getZoomFaktor());
+                        System.out.println(fieldsize/FractalCanvas.getZoomFaktor());
+
                     }
+
+
                     j += 1;
                 }
                 i += 1;

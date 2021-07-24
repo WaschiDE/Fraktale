@@ -6,9 +6,9 @@ import javafx.scene.canvas.GraphicsContext;
 public class FractalCanvas extends Canvas {
 
     public static GraphicsContext context;
+    private static double zoomFaktor;
 
-    private double[] middlepoint;
-    private double zoomFaktor;
+    private static double[] middlepoint;
     private double lastX;
     private double lastY;
 
@@ -23,7 +23,7 @@ public class FractalCanvas extends Canvas {
             if (event.getDeltaY() > 0) {
                 for (int i = 0; i < Math.abs(event.getDeltaY() / 40); i++) {
                     this.zoomFaktor = this.zoomFaktor / Math.pow(2, 0.25);
-                    if (this.zoomFaktor < 1) {
+                    if (this.zoomFaktor > 1) {
                         this.zoomFaktor = 1;
                     }
                 }
@@ -36,7 +36,7 @@ public class FractalCanvas extends Canvas {
             if (event.getDeltaY() < 0) {
                 for (int i = 0; i < Math.abs(event.getDeltaY() / 40); i++) {
                     this.zoomFaktor = this.zoomFaktor * Math.pow(2, 0.25);
-                    if (this.zoomFaktor < 1) {
+                    if (this.zoomFaktor > 1) {
                         this.zoomFaktor = 1;
                     }
                 }
@@ -56,7 +56,7 @@ public class FractalCanvas extends Canvas {
         setOnMouseDragged(event -> {
 
             this.middlepoint[0] = this.middlepoint[0] - (event.getX() - this.lastX) * this.zoomFaktor;
-            this.middlepoint[1] = this.middlepoint[1] - (this.lastY - event.getY()) * this.zoomFaktor;
+            this.middlepoint[1] = this.middlepoint[1] + (this.lastY - event.getY()) * this.zoomFaktor;
             this.lastX = event.getX();
             this.lastY = event.getY();
 
@@ -65,15 +65,15 @@ public class FractalCanvas extends Canvas {
         });
     }
 
-    public double[] getLeftUpperCorner() {
-        return new double[]{this.middlepoint[0] - (500 * this.zoomFaktor),this.middlepoint[1] + (500 * this.zoomFaktor)};
+    public static double[] getLeftUpperCorner() {
+        return new double[]{middlepoint[0] - (500 * zoomFaktor),middlepoint[1] - (500 * zoomFaktor)};
     }
 
-    public double[] getRigthBottomCorner() {
-        return new double[]{this.middlepoint[0] + (500 * this.zoomFaktor),this.middlepoint[1] - (500 * this.zoomFaktor)};
-    }
+//    public double[] getRigthBottomCorner() {
+//        return new double[]{this.middlepoint[0] + (500 * this.zoomFaktor),this.middlepoint[1] - (500 * this.zoomFaktor)};
+//    }
 
-    public double getZoomFaktor() {
+    public static double getZoomFaktor() {
         return zoomFaktor;
     }
 }
