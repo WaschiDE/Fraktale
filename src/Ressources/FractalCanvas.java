@@ -11,6 +11,4 @@ public class FractalCanvas extends Canvas {
         super(1000,1000);
         context = this.getGraphicsContext2D();
     }
-
-
 }
