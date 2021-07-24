@@ -40,6 +40,7 @@ public class SierpinskiTeppich{
         }
         System.out.println(m);
     }
+
     public boolean inCarpet(int x,int y){
         while(x != 0 && y != 0){
             if(x % 3 ==1 && y % 3 == 1){

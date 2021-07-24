@@ -13,7 +13,7 @@ public class SierpinskiDreieck{
         FractalCanvas.context.strokeLine(40, 10, 10, 40);
         FractalCanvas.context.strokeRect(50,50,50,50);
 
-        System.out.println("test");
+
 
 
 
