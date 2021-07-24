@@ -10,10 +10,6 @@ public class SierpinskiTeppich {
         FractalCanvas.context.setStroke(Color.BLACK);
         FractalCanvas.context.setFill(Color.BLACK);
 
-
-        System.out.println(FractalCanvas.getLeftUpperCorner()[0]);
-        System.out.println(FractalCanvas.getLeftUpperCorner()[1]);
-
         int i;
         int j;
         int k = 0;
@@ -38,15 +34,7 @@ public class SierpinskiTeppich {
                                 fieldsize/FractalCanvas.getZoomFaktor(),
                                 fieldsize/FractalCanvas.getZoomFaktor()
                         );
-
-                        System.out.println((fieldsize * j - FractalCanvas.getLeftUpperCorner()[1])/FractalCanvas.getZoomFaktor());
-                        System.out.println((fieldsize * j - FractalCanvas.getLeftUpperCorner()[1])/FractalCanvas.getZoomFaktor());
-                        System.out.println(fieldsize/FractalCanvas.getZoomFaktor());
-                        System.out.println(fieldsize/FractalCanvas.getZoomFaktor());
-
                     }
-
-
                     j += 1;
                 }
                 i += 1;
@@ -66,4 +54,3 @@ public class SierpinskiTeppich {
         return false;
     }
 }
-

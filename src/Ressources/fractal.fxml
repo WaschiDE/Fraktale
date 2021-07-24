@@ -52,6 +52,12 @@
                                 <Insets left="105.0" right="10.0" top="10.0"/>
                             </VBox.margin>
                         </Button>
+                        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetCanvas" prefHeight="25.0"
+                                prefWidth="145.0" text="Reset Canvas">
+                            <VBox.margin>
+                                <Insets left="105.0" right="10.0" top="10.0"/>
+                            </VBox.margin>
+                        </Button>
                     </children>
                 </VBox>
                 <FractalCanvas fx:id="fraktalCanvas" height="1000.0" width="1000.0">

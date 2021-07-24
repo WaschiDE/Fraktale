@@ -31,4 +31,12 @@ public class Controller {
             sierpinskiDreieck.drawSierpinskiDreieck();
         }
     }
+
+    @FXML
+    public void resetCanvas(ActionEvent actionEvent) throws InterruptedException {
+    FractalCanvas.setMiddlepoint(new double[]{500,500});
+    FractalCanvas.setZoomFaktor(1);
+
+    }
+
 }

@@ -76,4 +76,12 @@ public class FractalCanvas extends Canvas {
     public static double getZoomFaktor() {
         return zoomFaktor;
     }
+
+    public static void setMiddlepoint(double[] middlepoint) {
+        FractalCanvas.middlepoint = middlepoint;
+    }
+
+    public static void setZoomFaktor(double zoomFaktor) {
+        FractalCanvas.zoomFaktor = zoomFaktor;
+    }
 }
