@@ -1,4 +1,4 @@
-
+package Test;
 
 
 import javafx.application.Application;
@@ -9,7 +9,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
-public class test {
+public class Testing {
     public static class BasicOpsTest extends Application {
 
         public static void main(String[] args) {
