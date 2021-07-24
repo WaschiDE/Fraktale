@@ -38,7 +38,7 @@
                         <ComboBox fx:id="fractalComboBox" prefWidth="150.0" promptText="choose a Fractal">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
-                                    <String fx:id="0" fx:value="Sierpinski-Tepich"/>
+                                    <String fx:id="0" fx:value="Sierpinski-Teppich"/>
                                     <String fx:id="1" fx:value="Sierpinksi-Dreieck"/>
                                 </FXCollections>
                             </items>

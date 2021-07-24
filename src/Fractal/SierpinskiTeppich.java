@@ -9,11 +9,18 @@ public class SierpinskiTeppich {
     public void drawSierpinskiTeppich() {
         FractalCanvas.context.setStroke(Color.BLACK);
 
+        FractalCanvas fractalCanvas = new FractalCanvas();
+
+        System.out.println(fractalCanvas.getRigthBottomCorner()[0]);
+        System.out.println(fractalCanvas.getRigthBottomCorner()[1]);
+
+
+
         int i;
         int j;
         int k = 0;
 
-        int stufe = 9;
+        int stufe = 2;
         double fieldsize;
         int canvasesize = 1000;
 
@@ -27,7 +34,7 @@ public class SierpinskiTeppich {
                 j = 0;
                 while (j < Math.pow(3, k)) {
                     if (inCarpet(i, j)) {
-                        FractalCanvas.context.fillRect(fieldsize * i, fieldsize * j, fieldsize, fieldsize);
+                        FractalCanvas.context.fillRect((fieldsize * i - fractalCanvas.getLeftUpperCorner()[0])/fractalCanvas.getZoomFaktor() , (-fieldsize * j + fractalCanvas.getLeftUpperCorner()[1])/fractalCanvas.getZoomFaktor(), fieldsize/fractalCanvas.getZoomFaktor(), fieldsize/fractalCanvas.getZoomFaktor());
                     }
                     j += 1;
                 }
