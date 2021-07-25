@@ -14,13 +14,13 @@ public class SierpinskiTeppich {
         int j;
         int k = 0;
 
-        int stufe = 2;
+        int stufe = 10;
         double fieldsize;
         int canvasesize = 1000;
 
         while (k <= stufe) {
             fieldsize = canvasesize / Math.pow(3, k);
-            if (fieldsize < 1) {
+            if (fieldsize/FractalCanvas.getZoomFaktor() < 1) {
                 break;
             }
             i = 0;
